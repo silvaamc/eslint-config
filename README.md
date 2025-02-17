@@ -1,31 +1,8 @@
-# Configure Environment for EsLint 9+ with Prettier ESLINT
+# Configure Environment for ESLINT 9+ with Prettier
 After ESLINT 9.0 the configuration file changed to flat format, which changed they way to
-set up the file. This guide shows how to set up EsLint with Prettier
+set up the file. This guide shows the template for setting it up.
 
 ## Setup
-
-### React (with Next.js)
-
-Install dependencies:
-```
-npm i -D eslint @rocketseat/eslint-config
-```
-Inside `.eslintrc.json`
-```
-{
-  "extends": [
-    "@rocketseat/eslint-config/next", 
-    "next/core-web-vitals"
-  ]
-}
-```
-
-### React (without Next.js)
-
-# Configure Environment for EsLint 9+ with Prettier ESLINT
-After ESLINT 9.0 the configuration file changed to flat format, which changed they way to
-set up the file. This guide shows how to set up EsLint with Prettier
-
 1. Add Prettier ESLINT config to settings.json
 ```
 // Prettier ESLINT  
@@ -40,12 +17,12 @@ set up the file. This guide shows how to set up EsLint with Prettier
 },
 ```
 
-2. Download the config dependencie
+2. Install dependencies inside your project's folder:
 ```
-npm i @rocketseat/eslint-config/react.js
+npm i eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript-eslint globals -D
 ```
 
-3. Set up eslint.config.js
+3. inside `eslint.config.js`
 ```
 import js from '@eslint/js'
 import globals from 'globals'
@@ -56,9 +33,6 @@ import tseslint from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import prettierPlugin from 'eslint-plugin-prettier'
 
-// import the dependencie with the code pattern configuration and add it to Plugins{}
-import rocketseatLint from '@rocketseat/eslint-config/react.js';
- 
 export default [
     {
         ignores: ['dist', 'node_modules'],
@@ -82,7 +56,6 @@ export default [
             'react-refresh': reactRefresh,
             '@typescript-eslint': tseslint,
             prettier: prettierPlugin,
-            rocketseatLint,
         },
         rules: {
             'prettier/prettier': [
@@ -115,14 +88,38 @@ export default [
 ]
 ```
 
-4. Install the dependencies
+### React (with Next.js)
+
+Install dependencies:
 ```
-npm i eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript-eslint globals -D
+npm i -D eslint @rocketseat/eslint-config
+```
+Inside `.eslintrc.json`
+```
+{
+  "extends": [
+    "@rocketseat/eslint-config/next", 
+    "next/core-web-vitals"
+  ]
+}
 ```
 
-5. Run EsLint -> npx eslint (folderpath)
+### React (without Next.js)
+
+Install dependencies:
 ```
-npx eslint .
+npm i @rocketseat/eslint-config
+```
+inside `eslint.config.js`
+```
+import rocketseatLint from '@rocketseat/eslint-config/react.js';
+export default [
+  {
+    plugins: {
+      rocketseatLint
+    }
+  }
+]
 ```
 
 ### Node.js
