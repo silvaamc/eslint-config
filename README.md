@@ -46,7 +46,7 @@ export default [
             globals: globals.browser,
             parserOptions: {
                 ecmaFeatures: {
-                    jsx: true, // Suporte a JSX
+                    jsx: true,
                 },
             },
         },
