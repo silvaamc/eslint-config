@@ -3,7 +3,7 @@ After ESLINT 9.0 the configuration file changed to flat format, which changed th
 set up the file. This guide shows the template for setting it up.
 
 ## Setup
-1. Add Prettier ESLINT config to settings.json
+1. Add Prettier ESLINT config to `settings.json`
 ```
 // Prettier ESLINT  
 "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
@@ -22,7 +22,7 @@ set up the file. This guide shows the template for setting it up.
 npm i eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript-eslint globals -D
 ```
 
-3. inside `eslint.config.js`
+3. configure `eslint.config.js`
 ```
 import js from '@eslint/js'
 import globals from 'globals'
@@ -89,7 +89,6 @@ export default [
 ```
 
 ### React (with Next.js)
-
 Install dependencies:
 ```
 npm i -D eslint @rocketseat/eslint-config
@@ -105,7 +104,6 @@ Inside `.eslintrc.json`
 ```
 
 ### React (without Next.js)
-
 Install dependencies:
 ```
 npm i @rocketseat/eslint-config
@@ -123,7 +121,6 @@ export default [
 ```
 
 ### Node.js
-
 Install dependencies:
 ```
 npm i -D eslint @rocketseat/eslint-config
