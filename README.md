@@ -78,6 +78,12 @@ export default [
             '@typescript-eslint/no-empty-object-type': 'off',
             'react/react-in-jsx-scope': 'off',
             'react/prop-types': 'off',
+            'no-unused-vars': 'off',
+            '@typescript-eslint/no-unused-vars': ['warn', { 
+                vars: 'all', 
+                args: 'after-used', 
+                ignoreRestSiblings: true 
+            }],
         },
         settings: {
             react: {
